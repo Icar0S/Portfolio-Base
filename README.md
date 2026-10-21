@@ -22,7 +22,7 @@ recuperação é feita no navegador com **BM25** — a resposta mostra o trecho 
 
 ## Rodar localmente
 
-Requisitos: Node.js 20.9+ (o CI usa o 22).
+Requisitos: **Node.js 22.12+** (versão em `.nvmrc`, a mesma do CI). Com Node 20 o `npm ci` mostra avisos `EBADENGINE`.
 
 ```bash
 npm ci
@@ -91,6 +91,5 @@ ajuste-o lá e em `src/lib/site.ts` (`siteUrl`).
 
 ## Pendências para revisar
 
-- `[INSERIR]` URL do Currículo Lattes em `src/data/profile.ts` (`social.lattes`; enquanto for `null`, o ícone não aparece).
 - `[CONFIRMAR]` tecnologias que não aparecem no currículo nem nos repositórios: axe-core, Next.js, LangChain e Figma (`src/data/skills.ts`).
 - `[CONFIRMAR]` seu papel no DOM-Heal (TCC de Jonnas Christian, UECE) — campo `credit` em `src/data/projects.ts`.

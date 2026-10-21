@@ -1,6 +1,6 @@
 import { ArrowUpRight, GraduationCap, Mail } from "lucide-react";
 import type { ReactNode } from "react";
-import { GithubIcon, LinkedinIcon } from "@/components/ui/icons";
+import { GithubIcon, LattesIcon, LinkedinIcon } from "@/components/ui/icons";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { profile } from "@/data/profile";
@@ -119,15 +119,21 @@ export function Contact({ locale }: { locale: Locale }) {
                   external
                   newTab={copy.a11y.newTab}
                 />
-                <div className="sm:col-span-2">
-                  <ContactCard
-                    href={`mailto:${profile.academicEmail}`}
-                    label={copy.contact.academicEmail}
-                    value={profile.academicEmail}
-                    icon={<GraduationCap className="h-4.5 w-4.5" aria-hidden="true" />}
-                    newTab={copy.a11y.newTab}
-                  />
-                </div>
+                <ContactCard
+                  href={profile.social.lattes.href}
+                  label={copy.contact.lattes}
+                  value={profile.social.lattes.label}
+                  icon={<LattesIcon className="h-4.5 w-4.5" />}
+                  external
+                  newTab={copy.a11y.newTab}
+                />
+                <ContactCard
+                  href={`mailto:${profile.academicEmail}`}
+                  label={copy.contact.academicEmail}
+                  value={profile.academicEmail}
+                  icon={<GraduationCap className="h-4.5 w-4.5" aria-hidden="true" />}
+                  newTab={copy.a11y.newTab}
+                />
               </Reveal>
             </div>
           </div>

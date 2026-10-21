@@ -57,8 +57,8 @@ export const profile = {
       label: "in/icaro-santos-oliveira",
     },
     lattes: {
-      href: "http://lattes.cnpq.br/4886446557733068",
-      label: "lattes.cnpq.br/4886446557733068"
+      href: "https://lattes.cnpq.br/4886446557733068",
+      label: "lattes.cnpq.br/4886446557733068",
     },
   },
 

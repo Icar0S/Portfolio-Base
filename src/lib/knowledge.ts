@@ -161,10 +161,11 @@ export function buildKnowledge(locale: Locale): KnowledgeChunk[] {
   chunks.push({
     id: "contact",
     title: copy.contact.eyebrow,
-    text: `${copy.contact.text} ${copy.contact.email}: ${profile.email} · ${copy.contact.academicEmail}: ${profile.academicEmail} · LinkedIn: ${profile.social.linkedin.label} · GitHub: ${profile.social.github.label}.`,
+    text: `${copy.contact.text} ${copy.contact.email}: ${profile.email} · ${copy.contact.academicEmail}: ${profile.academicEmail} · LinkedIn: ${profile.social.linkedin.label} · GitHub: ${profile.social.github.label} · Lattes: ${profile.social.lattes.label}.`,
     source: copy.contact.eyebrow,
     href: section("contact"),
-    keywords: "contato contact email e-mail linkedin github falar talk contratar hire vaga job",
+    keywords:
+      "contato contact email e-mail linkedin github lattes curriculo falar talk contratar hire vaga job",
   });
 
   return chunks;

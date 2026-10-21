@@ -40,9 +40,7 @@ export function Footer({ locale, variant, items, topHref }: FooterProps) {
   const social = [
     { label: "LinkedIn", href: profile.social.linkedin.href, icon: <LinkedinIcon className="h-4.5 w-4.5" /> },
     { label: "GitHub", href: profile.social.github.href, icon: <GithubIcon className="h-4.5 w-4.5" /> },
-    ...(profile.social.lattes
-      ? [{ label: "Lattes", href: profile.social.lattes, icon: <LattesIcon className="h-4.5 w-4.5" /> }]
-      : []),
+    { label: "Lattes", href: profile.social.lattes.href, icon: <LattesIcon className="h-4.5 w-4.5" /> },
   ];
 
   return (
