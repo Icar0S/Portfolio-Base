@@ -1,255 +1,211 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#101b2a">
+    <meta name="description" content="Icaro Santos de Oliveira — doutorando em Ciência da Computação, QA Engineer e engenheiro de qualidade e testes de software em Fortaleza, Brasil.">
+    <meta name="author" content="Icaro Santos de Oliveira">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://icar0s.github.io/Portfolio-Base/">
+    <link rel="alternate" hreflang="pt-BR" href="https://icar0s.github.io/Portfolio-Base/">
+    <link rel="alternate" hreflang="en" href="https://icar0s.github.io/Portfolio-Base/index-en.html">
+    <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
+    <link rel="alternate icon" href="./assets/logo-img.png" type="image/png">
+    <link rel="stylesheet" href="./css/portfolio.css">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:title" content="Icaro Santos de Oliveira — Qualidade, código e pesquisa">
+    <meta property="og:description" content="Doutorando em Ciência da Computação, QA Engineer e engenheiro de qualidade e testes de software.">
+    <meta property="og:url" content="https://icar0s.github.io/Portfolio-Base/">
+    <meta property="og:image" content="https://icar0s.github.io/Portfolio-Base/assets/icaro-portrait.webp">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>Icaro Santos de Oliveira — Qualidade, código e pesquisa</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
 
-<head>
-  <!-- Meta tags -->
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- title -->
-  <title>Portfólio Icaro</title>
-  <!-- CSS -->
-  <link rel="stylesheet" href="css/extends.css" />
-  <!-- favicon -->
-  <link rel="icon" href="./assets/logo-img.png" type="image/png">
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
-</head>
+    <header class="site-header">
+      <nav class="nav shell" aria-label="Navegação principal">
+        <a class="brand" href="#inicio" aria-label="Icaro Santos de Oliveira, início">
+          <span class="brand-mark" aria-hidden="true">io</span>
+          <span>Icaro Santos<span class="brand-period">.</span></span>
+        </a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links">
+          <span class="menu-toggle-label">Menu</span>
+          <span class="menu-icon" aria-hidden="true"><span></span><span></span></span>
+        </button>
+        <div class="nav-links" id="nav-links">
+          <a href="#sobre">Sobre</a>
+          <a href="#habilidades">Habilidades</a>
+          <a href="#projetos">Projetos</a>
+          <a href="#trajetoria">Trajetória</a>
+          <a href="#pesquisa">Pesquisa</a>
+          <a class="nav-contact" href="#contato">Vamos conversar <span aria-hidden="true">↗</span></a>
+          <a class="language-toggle" href="./index-en.html" hreflang="en" lang="en" aria-label="Switch language to English">EN</a>
+          <button class="theme-toggle" type="button" aria-label="Ativar tema claro" title="Alternar tema">
+            <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"></path></svg>
+            <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.4 15.4A8.5 8.5 0 0 1 8.6 3.6 8.5 8.5 0 1 0 20.4 15.4Z"></path></svg>
+          </button>
+        </div>
+      </nav>
+    </header>
 
-<body>
-  <!-- navbar -->
-  <nav class="navbar">
-    <div class="navbar__content max-width mb-0">
-      <a href="/" style="display: flex;">
-        <img src="assets/Icaro Santos (99).jpg" alt="icaro" class="logo" />
-        <h2>Icaro Santos de Oliveira</h2>
-      </a>
-
-      <ul class="navbar__links">
-        <li><a href="#header">Início</a></li>
-        <li><a href="#about">Sobre</a></li>
-        <li><a href="#skills">Habilidades</a></li>
-        <li><a href="#projects">Projetos</a></li>
-        <li><a href="#footer">Contato</a></li>
-      </ul>
-      <div class="navbar__mobile">
-        <img src="assets/menu.svg" alt="menu" class="burguer" />
-        <ul class="mobile__links">
-          <li><a href="#header">Início</a></li>
-          <li><a href="#about">Sobre</a></li>
-          <li><a href="#skills">Habilidades</a></li>
-          <li><a href="#projects">Projetos</a></li>
-          <li><a href="#footer">Contato</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <!-- header -->
-  <header id="header" class="max-width">
-    <div class="header__left">
-      <h1>Olá! Sou Icaro Desenvolvedor Fullstack</h1>
-      <p>
-        Desenvolvedor web full-stack com vasta experiência em desenvolvimento
-        de aplicações web escaláveis e responsivas. Sou apaixonado por criar
-        soluções tecnológicas que resolvem problemas reais e que agregam valor
-        aos usuários.
-      </p>
-      <a href="#about" class="btn btn-primary">Saiba Mais!</a>
-    </div>
-    <div class="header__right">
-      <div class="header__image">
-        <img src="assets/Icaro Santos (58).jpg" alt="Icaro Santos" class="icaro" />
-        <img src="assets/abstract.svg" alt="background" class="background" />
-      </div>
-    </div>
-  </header>
-
-  <!-- Sobre -->
-  <section id="about" class="about max-width">
-    <div class="about__left">
-      <h2 class="secondary-title">Além do código: quem sou eu?</h2>
-      <p>
-        Que tal se conectar comigo nas redes sociais abaixo e saber mais sobre
-        meu trabalho?
-      </p>
-      <ul>
-        <li>
-          <a href="#"><img src="assets/instagram.svg" alt="Instagram" /></a>
-        </li>
-        <li>
-          <a href="#"><img src="assets/linkedin.svg" alt="Linkedin" /></a>
-        </li>
-        <li>
-          <a href="#"><img src="assets/facebook.svg" alt="Facebook" /></a>
-        </li>
-      </ul>
-    </div>
-    <div class="about__right">
-      <h3 class="tertiary-title mb-m">
-        Desenvolvedor fullstack apaixonado por tecnologia e soluções criativas
-      </h3>
-      <p>
-        Olá, eu sou Icaro Santos, um desenvolvedor fullstack apaixonado por
-        tecnologia e soluções criativas. Com mais de 3 anos de experiência em
-        desenvolvimento web, tenho trabalhado com diversas tecnologias e
-        plataformas para criar soluções robustas e escaláveis que atendam às
-        necessidades dos clientes.
-      </p>
-      <p>
-        Eu amo o desafio de encontrar soluções inovadoras e criativas para
-        problemas complexos e estou sempre buscando aprender e crescer como
-        profissional.
-      </p>
-    </div>
-  </section>
-
-  <!-- habilidades -->
-  <section id="skills" class="skills">
-    <div class="skills__content max-width">
-      <h2 class="tertiary-title">Minhas Ferramentas</h2>
-      <p class="description">
-        Descubra as habilidades e ferramentas que domino e que me permitem
-        criar soluções criativas e funcionais para meus clientes.
-      </p>
-      <ul>
-        <li class="skills__item">
-          <div class="image-container">
-            <img src="assets/notebook.png" alt="Desenvolvimento Web" />
+    <main id="conteudo">
+      <section class="hero shell" id="inicio" aria-labelledby="hero-title">
+        <div class="hero-copy reveal">
+          <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> Fortaleza, CE · Brasil</p>
+          <h1 id="hero-title">Qualidade em cada linha.<br><span class="text-accent">Curiosidade em cada sistema.</span></h1>
+          <p class="hero-role">Engenharia de Qualidade <span>·</span> QA <span>·</span> Fullstack <span>·</span> Pesquisa em IA</p>
+          <p class="hero-intro">Sou Icaro Santos de Oliveira. Trabalho com qualidade e testes de software, desenvolvimento fullstack e pesquisa em sistemas baseados em LLM e RAG.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#projetos">Explorar projetos <span aria-hidden="true">↓</span></a>
+            <a class="button button-quiet" href="mailto:icaro.santos@aluno.uece.br">Entrar em contato <span aria-hidden="true">↗</span></a>
+            <a class="cv-link" href="./docs/CurriculoBR_Icaro_09_26.pdf" target="_blank" rel="noopener">Baixar currículo <span aria-hidden="true">↓</span></a>
           </div>
-          <h3>Desenvolvimento Web</h3>
-          <p>
-            Experiência em desenvolvimento fullstack com foco em tecnologias
-            modernas.
-          </p>
-        </li>
-        <li class="skills__item">
-          <div class="image-container">
-            <img src="assets/colors.png" alt="Web Design" />
+          <div class="hero-meta">
+            <span>6+ anos em tecnologia</span>
+            <span class="meta-divider" aria-hidden="true"></span>
+            <span>Doutorando em Ciência da Computação</span>
           </div>
-          <h3>Web Design</h3>
-          <p>
-            Habilidade em criar layouts modernos e responsivos, com foco na
-            experiência do usuário.
-          </p>
-        </li>
-        <li class="skills__item">
-          <div class="image-container">
-            <img src="assets/phone.png" alt="UX/UI Design" />
+        </div>
+        <div class="hero-visual reveal" aria-label="Retrato de Icaro Santos">
+          <div class="visual-grid" aria-hidden="true"></div>
+          <div class="visual-tag tag-top"><span class="tag-dot" aria-hidden="true"></span> qualidade por princípio</div>
+          <figure class="portrait">
+            <img src="./assets/icaro-portrait.webp" alt="Icaro Santos de Oliveira" width="960" height="1440" fetchpriority="high">
+          </figure>
+          <div class="visual-tag tag-bottom"><span class="mono">CE, BR</span><span aria-hidden="true">↗</span></div>
+          <span class="visual-index" aria-hidden="true">01 / 05</span>
+        </div>
+        <a class="scroll-cue" href="#sobre"><span aria-hidden="true">↓</span> role para explorar</a>
+      </section>
+
+      <section class="section about-section" id="sobre" aria-labelledby="about-title">
+        <div class="shell about-grid">
+          <div class="section-heading reveal">
+            <p class="eyebrow"><span class="section-index">01</span> Sobre mim</p>
+            <h2 id="about-title">Engenharia com<br><span class="text-accent">olhar de qualidade.</span></h2>
           </div>
-          <h3>UX/UI Design</h3>
-          <p>
-            Conhecimentos em design de interface e experiência do usuário
-            visualmente atraentes e intuitivas.
-          </p>
-        </li>
-        <li class="skills__item">
-          <div class="image-container">
-            <img src="assets/files.png" alt="Gerenciamentos de versões" />
+          <div class="about-copy reveal">
+            <p class="lead">Minha trajetória começou na Engenharia de Computação e segue entre construir software, questionar como ele funciona e pesquisar como torná-lo melhor.</p>
+            <p>Tenho mais de seis anos de experiência em automação de testes E2E, API, carga e segurança integrados a pipelines de CI/CD. Atualmente, sou Analista de Sistemas — Qualidade de Software na CAGECE e doutorando em Ciência da Computação na UECE.</p>
+            <p>Minha pesquisa e atuação combinam teste de sistemas Big Data, qualidade de dados e garantia de qualidade para sistemas baseados em LLM com RAG. Também tenho experiência como líder de QA e desenvolvedor fullstack.</p>
+            <div class="about-note"><span class="note-symbol" aria-hidden="true">↗</span><span>Qualidade contínua, automação e evidência orientam meu trabalho em sistemas críticos.</span></div>
           </div>
-          <h3>Gerenciamentos de versões</h3>
-          <p>
-            Experiência em ferramentas de gerenciamento de versão para
-            controle de projetos.
-          </p>
-        </li>
-      </ul>
-    </div>
-  </section>
+        </div>
+      </section>
 
-  <!-- Projetos -->
-  <section id="projects" class="projects max-width">
-    <div class="projects__content">
-      <h2 class="secondary-title">Projetos em Destaque</h2>
-      <p>
-        De ideias abstratas a projetos bem-sucedidos, aqui estão alguns dos
-        meus trabalhos mais recentes
-      </p>
-    </div>
-    <ul>
-      <li>
-        <div class="image">
-          <img src="assets/task-manager.png" alt="Gerenciamento de tarefas" />
+      <section class="section skills-section" id="habilidades" aria-labelledby="skills-title">
+        <div class="shell">
+          <div class="section-heading section-heading-wide reveal">
+            <div><p class="eyebrow"><span class="section-index">02</span> Competências técnicas</p><h2 id="skills-title">Ferramentas para <span class="text-accent">software confiável.</span></h2></div>
+            <p class="section-aside">Automação, engenharia de qualidade, desenvolvimento e pesquisa aplicada — apoiados por práticas e ferramentas usadas em projetos reais.</p>
+          </div>
+          <div class="skill-grid">
+            <article class="skill-card reveal"><span class="skill-number">01</span><h3>QA &amp; automação</h3><p>Testes automatizados e exploratórios para aplicações web, APIs e sistemas críticos.</p><ul class="tag-list"><li>Playwright</li><li>Pytest</li><li>Cypress</li><li>Selenium</li><li>Appium</li><li>JUnit 5</li><li>TIR</li></ul></article>
+            <article class="skill-card reveal"><span class="skill-number">02</span><h3>CI/CD, desempenho &amp; segurança</h3><p>Pipelines e estratégias de teste integradas ao ciclo de entrega de software.</p><ul class="tag-list"><li>Jenkins</li><li>GitLab CI</li><li>Azure DevOps</li><li>Docker</li><li>k6</li><li>JMeter</li><li>OWASP ZAP</li></ul></article>
+            <article class="skill-card reveal"><span class="skill-number">03</span><h3>Desenvolvimento</h3><p>Experiência fullstack em aplicações web, APIs e serviços.</p><ul class="tag-list"><li>Python</li><li>JavaScript / TypeScript</li><li>Java</li><li>Go</li><li>React</li><li>Django</li><li>Spring</li><li>PostgreSQL</li></ul></article>
+            <article class="skill-card reveal"><span class="skill-number">04</span><h3>Dados &amp; IA</h3><p>Qualidade de dados e avaliação de sistemas com modelos de linguagem e RAG.</p><ul class="tag-list"><li>LLM / RAG</li><li>spaCy</li><li>RAGAS</li><li>DeepEval</li><li>PySpark</li><li>Pandas</li><li>DuckDB</li></ul></article>
+            <article class="skill-card skill-card-featured reveal"><span class="skill-number">05</span><h3>Engenharia de qualidade</h3><p>Governança de testes, revisão multivocal e oráculos semânticos para sistemas complexos.</p><ul class="tag-list"><li>Allure</li><li>TestLink</li><li>Gitflow</li><li>Qualidade de dados</li><li>Big Data</li><li>MLR / MSR</li></ul></article>
+          </div>
         </div>
-        <div class="projects__info">
-          <h3 class="tertiary-title">
-            Sistema BigData Fortaleza
-          </h3>
-          <p>
-            Sistema web desenvolvido para a empresa DEF, com funcionalidades
-            como cadastro de tarefas, atribuição de responsáveis e
-            acompanhamento do status das atividades.
-          </p>
-          <a href="#">Leia mais &rarr;</a>
-        </div>
-      </li>
-      <li class="projects__reversed-list">
-        <div class="image">
-          <img src="assets/ecommerce.png" alt="ecommerce" />
-        </div>
-        <div class="projects__info">
-          <h3 class="tertiary-title">
-            Desenvolvimento Plataforma AdotePets
-          </h3>
-          <p>
-            Site de e-commerce desenvolvido do zero com tecnologias como React
-            e Node.js, além de integração com diversos meios de pagamento e
-            entrega.
-          </p>
-          <a href="#">Leia mais &rarr;</a>
-        </div>
-      </li>
-      <li>
-        <div class="image">
-          <img src="assets/delivery.png" alt="Dashboard" />
-        </div>
-        <div class="projects__info">
-          <h3 class="tertiary-title">
-            Plataforma Dashboard com Django
-          </h3>
-          <p>
-            Aplicativo mobile desenvolvido para a empresa ETICE,
-            permitindo a realização de pedidos e acompanhamento em tempo real
-            do status de suas pesquisas.
-          </p>
-          <a href="#">Leia mais &rarr;</a>
-        </div>
-      </li>
-    </ul>
-  </section>
+      </section>
 
-  <!-- Footer -->
-  <footer id="footer">
-    <div class="footer__content max-width mb-0">
-      <h2 class="tertiary-title mb-s">Vamos conversar?</h2>
-      <p class="mb-m">
-        Ficarei feliz em saber mais sobre seus projetos e como podemos
-        trabalhar juntos para torná-los realidade.
-      </p>
-      <div class="footer__contact mb-m">
-        <span class="mb-m">icarooliveira.santos23@gmail.com</span>
-        <span>+55 85 98402-4454</span>
-      </div>
-      <ul class="mb-l">
-        <li>
-          <a href="#"><img src="assets/instagram.svg" alt="Instagram" /></a>
-        </li>
-        <li>
-          <a href="#"><img src="assets/linkedin.svg" alt="Linkedin" /></a>
-        </li>
-        <li>
-          <a href="#"><img src="assets/github.svg" alt="Github" /></a>
-        </li>
-      </ul>
-      <p class="footer__copyright">
-        © 2023 Icaro Santos. Todos os direitos reservados.
-      </p>
-    </div>
-  </footer>
-  <!-- script -->
-  <script src="scripts/index.js"></script>
-</body>
+      <section class="section projects-section" id="projetos" aria-labelledby="projects-title">
+        <div class="shell">
+          <div class="section-heading section-heading-wide reveal">
+            <div><p class="eyebrow"><span class="section-index">03</span> Trabalho selecionado</p><h2 id="projects-title">Projetos com <span class="text-accent">propósito.</span></h2></div>
+            <p class="section-aside">Ideias e ferramentas que exploram como construir, testar e melhorar software.</p>
+          </div>
+          <div class="project-grid">
+            <article class="project-card project-featured reveal">
+              <div class="project-art art-data" role="img" aria-label="Ilustração abstrata de fluxos de dados conectados">
+                <span class="art-label">PLATAFORMA · LLM + RAG</span><div class="data-orbit orbit-one"></div><div class="data-orbit orbit-two"></div><div class="data-core">SDT<span>↗</span></div><span class="data-node node-one"></span><span class="data-node node-two"></span><span class="data-node node-three"></span>
+              </div>
+              <div class="project-content"><p class="project-type">01 / INTELIGÊNCIA ARTIFICIAL</p><h3>SmartDataTest</h3><p class="project-problem"><strong>Desafio</strong> — Qualidade em Big Data exige testes que acompanhem a complexidade dos dados e dos sistemas.</p><p class="project-solution"><strong>Abordagem</strong> — Plataforma web com LLM + RAG para apoiar testes de qualidade em Big Data.</p><ul class="tag-list"><li>LLM</li><li>RAG</li><li>Big Data</li><li>Testes</li></ul><span class="project-link pending-link">Repositório / demo: <em>[INSERIR LINK]</em></span></div>
+            </article>
+            <article class="project-card reveal">
+              <div class="project-art art-heal" role="img" aria-label="Ilustração de elementos de interface se reconectando">
+                <span class="art-label">BIBLIOTECA · SELF-HEALING</span><div class="heal-frame"><span class="heal-code">&lt;button&gt;</span><span class="heal-cross">×</span><span class="heal-arrow">↘</span><span class="heal-target">●</span></div><div class="heal-caption mono">selector repaired</div>
+              </div>
+              <div class="project-content"><p class="project-type">02 / AUTOMAÇÃO</p><h3>DOM-Heal</h3><p class="project-problem"><strong>Desafio</strong> — Mudanças no DOM podem tornar seletores frágeis e interromper testes E2E.</p><p class="project-solution"><strong>Abordagem</strong> — Biblioteca de self-healing para apoiar a resiliência de testes end-to-end.</p><ul class="tag-list"><li>DOM</li><li>E2E</li><li>Self-healing</li></ul><span class="project-link pending-link">Repositório / demo: <em>[INSERIR LINK]</em></span></div>
+            </article>
+            <article class="project-card reveal">
+              <div class="project-art art-benchmark" role="img" aria-label="Ilustração de um relatório de benchmark com gráficos">
+                <span class="art-label">PIPELINE · AVALIAÇÃO</span><div class="report-sheet"><span class="report-heading">QUALITY REPORT</span><span class="report-line"></span><span class="report-line short"></span><div class="report-chart"><i></i><i></i><i></i><i></i><i></i><i></i></div><span class="report-badge">PDF ↗</span></div>
+              </div>
+              <div class="project-content"><p class="project-type">03 / PESQUISA APLICADA</p><h3>Benchmark de LLM + RAG</h3><p class="project-problem"><strong>Desafio</strong> — Comparar qualidade de sistemas baseados em LLM e RAG de forma estruturada.</p><p class="project-solution"><strong>Abordagem</strong> — Pipeline de benchmark que organiza avaliações e gera relatórios em PDF.</p><ul class="tag-list"><li>LLM</li><li>RAG</li><li>Benchmark</li><li>PDF</li></ul><span class="project-link pending-link">Repositório / demo: <em>[INSERIR LINK]</em></span></div>
+            </article>
+            <article class="project-card project-compact reveal">
+              <div class="project-mini-mark" aria-hidden="true">BD<span>↗</span></div>
+              <div class="project-content"><p class="project-type">04 / DADOS</p><h3>Plataforma Big Data Fortaleza</h3><p>Processo de testes da plataforma Big Data Fortaleza (Iplanfor), com testes funcionais, unitários, integração, API, carga e segurança.</p><ul class="tag-list"><li>JUnit 5</li><li>Docker</li><li>Postman</li><li>JMeter</li><li>Locust</li><li>OWASP ZAP</li></ul><span class="project-link pending-link">Repositório / demo: <em>[INSERIR LINK]</em></span></div>
+            </article>
+            <article class="project-card project-compact reveal">
+              <div class="project-mini-mark pet-mark" aria-hidden="true">AP<span>↗</span></div>
+              <div class="project-content"><p class="project-type">05 / PRODUTO DIGITAL</p><h3>Plataforma AdotePets</h3><p>Plataforma web dedicada à adoção de pets.</p><ul class="tag-list"><li>Python</li><li>Django</li><li>SQLite</li></ul><a class="project-link" href="https://github.com/Icar0S/plataforma-AdotsPets" target="_blank" rel="noopener noreferrer">Ver repositório <span aria-hidden="true">↗</span></a></div>
+            </article>
+            <article class="project-card project-compact reveal">
+              <div class="project-mini-mark dash-mark" aria-hidden="true">▤<span>↗</span></div>
+              <div class="project-content"><p class="project-type">06 / VISUALIZAÇÃO</p><h3>Dashboard em Django</h3><p>Aplicação web com autenticação Google e dashboards analíticos construídos com Pandas e Plotly.</p><ul class="tag-list"><li>Django</li><li>PostgreSQL</li><li>Pandas</li><li>Plotly</li></ul><span class="project-link pending-link">Repositório / demo: <em>[INSERIR LINK]</em></span></div>
+            </article>
+          </div>
+          <p class="project-footnote"><span aria-hidden="true">↳</span> Links marcados como <strong>[INSERIR LINK]</strong> aguardam a URL pública do projeto.</p>
+        </div>
+      </section>
 
+      <section class="section journey-section" id="trajetoria" aria-labelledby="journey-title">
+        <div class="shell journey-grid">
+          <div class="section-heading reveal"><p class="eyebrow"><span class="section-index">04</span> Percurso</p><h2 id="journey-title">Experiência que <span class="text-accent">constrói perspectiva.</span></h2><p class="section-aside journey-aside">Uma base em engenharia, uma carreira entre qualidade e sistemas e uma pesquisa voltada ao futuro do teste de software.</p></div>
+          <div class="timeline">
+            <article class="timeline-item reveal"><span class="timeline-marker" aria-hidden="true"></span><p class="timeline-date">2025–ATUAL</p><div><h3>Analista de Sistemas — Qualidade de Software</h3><p class="timeline-org">CAGECE · Fortaleza/CE</p><p>Automação de UI e API para ERP Protheus, pipeline-as-code com Jenkins e arquitetura de testes para assistente institucional com RAG. Mais de 30 rotinas críticas de folha e 1.300 testes de API automatizados.</p></div></article>
+            <article class="timeline-item reveal"><span class="timeline-marker" aria-hidden="true"></span><p class="timeline-date">2022–2025</p><div><h3>Líder de QA / Analista de QA</h3><p class="timeline-org">GREat · Universidade Federal do Ceará</p><p>Liderança de QA no projeto Antonieta de Barros (FNDE) e processo de testes da plataforma Big Data Fortaleza. Playwright, Pytest, GitLab CI, JUnit 5, Docker, Postman, JMeter, Locust e OWASP ZAP. Atuação complementar como desenvolvedor fullstack júnior.</p></div></article>
+            <article class="timeline-item reveal"><span class="timeline-marker" aria-hidden="true"></span><p class="timeline-date">2023–2024</p><div><h3>Estagiário de Desenvolvimento</h3><p class="timeline-org">Etice · Empresa de Tecnologia da Informação do Ceará</p><p>Desenvolvimento web com Django e PostgreSQL, autenticação Google e dashboards analíticos com Pandas e Plotly.</p></div></article>
+            <article class="timeline-item reveal"><span class="timeline-marker" aria-hidden="true"></span><p class="timeline-date">2021–2022</p><div><h3>Analista de QA Júnior</h3><p class="timeline-org">Pink App · Remoto</p><p>Automação de testes web com Selenium, testes de carga com JMeter/Taurus e testes manuais em metodologia ágil.</p></div></article>
+            <article class="timeline-item reveal"><span class="timeline-marker" aria-hidden="true"></span><p class="timeline-date">2019–2021</p><div><h3>Estagiário de QA</h3><p class="timeline-org">Bynd — Serviços de Tecnologia</p><p>Criação da primeira suíte de testes automatizados da empresa com Appium, ciclos de testes manuais e relatórios de defeitos.</p></div></article>
+            <article class="timeline-item reveal"><span class="timeline-marker" aria-hidden="true"></span><p class="timeline-date">2026–2029</p><div><h3>Doutorado em Ciência da Computação</h3><p class="timeline-org">UECE · Grupo GESAD</p><p>Pesquisa em teste e garantia de qualidade de sistemas baseados em LLM com RAG.</p></div></article>
+            <article class="timeline-item reveal"><span class="timeline-marker" aria-hidden="true"></span><p class="timeline-date">2024–2026</p><div><h3>Mestrado em Ciência da Computação</h3><p class="timeline-org">UECE</p><p>Dissertação sobre teste de sistemas Big Data e qualidade de dados.</p></div></article>
+            <article class="timeline-item reveal"><span class="timeline-marker" aria-hidden="true"></span><p class="timeline-date">2023–2024</p><div><h3>Pós-graduação em Desenvolvimento Full Stack · 360h</h3><p class="timeline-org">Centro Universitário União das Américas — Descomplica</p></div></article>
+            <article class="timeline-item reveal"><span class="timeline-marker" aria-hidden="true"></span><p class="timeline-date">2017–2023</p><div><h3>Bacharelado em Engenharia da Computação</h3><p class="timeline-org">Instituto Federal do Ceará (IFCE)</p></div></article>
+            <article class="timeline-item reveal"><span class="timeline-marker" aria-hidden="true"></span><p class="timeline-date">2025</p><div><h3>ISTQB® Certified Tester — Foundation Level (CTFL)</h3><p class="timeline-org">BSTQB® · Março de 2025</p></div></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section research-section" id="pesquisa" aria-labelledby="research-title">
+        <div class="shell research-panel reveal">
+          <div class="research-copy"><p class="eyebrow"><span class="section-index">05</span> Pesquisa &amp; publicações</p><h2 id="research-title">Testar sistemas inteligentes também exige <span class="text-accent">inteligência.</span></h2><p>Pesquisa em teste de sistemas LLM/RAG, oráculos semânticos, qualidade de dados, Big Data testing e revisão multivocal. Também atuo na supervisão técnica de pesquisa de iniciação científica na UECE.</p><a class="text-link" href="mailto:icaro.santos@aluno.uece.br?subject=Pesquisa%20e%20publica%C3%A7%C3%B5es">Conversar sobre pesquisa <span aria-hidden="true">↗</span></a></div>
+          <div class="research-index" aria-hidden="true"><span class="index-orbit"></span><span class="index-core">LLM<br><b>×</b><br>RAG</span><span class="index-caption mono">GESAD / UECE</span></div>
+        </div>
+        <div class="shell publication-list" aria-label="Publicações e trabalhos de pesquisa">
+          <article class="publication-item"><span class="publication-year">2026 · EM AVALIAÇÃO</span><h3>Big Data Testing: A Multivocal Literature Review Bridging Academic Research and Industry Practice</h3><p>Journal of Systems and Software (JSS), Elsevier. Submetido, em avaliação.</p></article>
+          <article class="publication-item"><span class="publication-year">2025 · NO PRELO</span><h3>Big Data Fortaleza Platform: Testing Process</h3><p>Lecture Notes in Business Information Processing (LNBIP), Springer. Versão estendida do artigo do ICEIS 2025; no prelo.</p></article>
+          <article class="publication-item"><span class="publication-year">2026 · ACEITO</span><h3>Experience Report: Test Architecture and Semantic Validation for a RAG System in the Public Sector</h3><p>11th Brazilian Symposium on Systematic and Automated Software Testing (SAST 2026), CBSoft / ACM. Artefato aceito: <a href="https://doi.org/10.5281/zenodo.21837636" target="_blank" rel="noopener noreferrer">DOI 10.5281/zenodo.21837636 ↗</a></p></article>
+          <article class="publication-item"><span class="publication-year">2026 · PUBLICADO</span><h3>From Manual Validation to Continuous Quality: An Experience Report on the Evolution of Automated Testing in a Legacy ERP</h3><p>14th Workshop on Software Visualization, Evolution and Maintenance (VEM 2026), CBSoft. Artefato: <a href="https://doi.org/10.5281/zenodo.21837636" target="_blank" rel="noopener noreferrer">DOI 10.5281/zenodo.21837636 ↗</a></p></article>
+          <article class="publication-item"><span class="publication-year">2026 · PUBLICADO</span><h3>“Will I Be Replaced?” Revisited: An Exploratory Replication on AI Tool Perceptions with Software Professionals in Brazil</h3><p>5th Brazilian Workshop on Intelligent Software Engineering (ISE 2026), CBSoft / ACM. Pacote de replicação: <a href="https://doi.org/10.5281/zenodo.20947923" target="_blank" rel="noopener noreferrer">DOI 10.5281/zenodo.20947923 ↗</a></p></article>
+          <article class="publication-item"><span class="publication-year">2025 · PUBLICADO</span><h3>Big Data Fortaleza Platform: Quality Improvement with Testing Process</h3><p>Proceedings of the 27th International Conference on Enterprise Information Systems (ICEIS 2025), vol. 2, pp. 227–236. <a href="https://doi.org/10.5220/0013290500003929" target="_blank" rel="noopener noreferrer">DOI 10.5220/0013290500003929 ↗</a></p></article>
+          <article class="publication-item"><span class="publication-year">2024 · PUBLICADO</span><h3>Quality of Big Data Systems: A Systematic Review of Practices, Methods and Tools</h3><p>XXIII Simpósio Brasileiro de Qualidade de Software (SBQS 2024), pp. 22–31, SBC.</p></article>
+        </div>
+      </section>
+
+      <section class="contact-section" id="contato" aria-labelledby="contact-title">
+        <div class="shell contact-inner reveal">
+          <p class="eyebrow"><span class="section-index">06</span> Próximo passo</p>
+          <h2 id="contact-title">Vamos fazer algo<br><span class="text-accent">confiável juntos?</span></h2>
+          <p>Aberto a conversas sobre qualidade, desenvolvimento, pesquisa e bons desafios.</p>
+          <a class="button button-light" href="mailto:icaro.santos@aluno.uece.br">icaro.santos@aluno.uece.br <span aria-hidden="true">↗</span></a>
+          <div class="contact-links">
+            <a href="https://github.com/icar0s" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+            <a href="https://www.linkedin.com/in/icaro-santos-oliveira/" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
+            <span class="contact-placeholder">Lattes: [INSERIR LINK]</span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-inner"><a class="brand" href="#inicio" aria-label="Voltar ao início"><span class="brand-mark" aria-hidden="true">io</span><span>Icaro Santos<span class="brand-period">.</span></span></a><p>Feito com intenção, código e cuidado.</p><a class="back-top" href="#inicio">Voltar ao topo <span aria-hidden="true">↑</span></a><small>© <span id="current-year">2026</span> Icaro Santos de Oliveira · Fortaleza, Brasil</small></div>
+    </footer>
+    <script src="./scripts/portfolio.js" defer></script>
+  </body>
 </html>
