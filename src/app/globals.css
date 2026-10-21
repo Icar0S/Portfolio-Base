@@ -1,0 +1,437 @@
+@import "tailwindcss";
+
+/* ------------------------------------------------------------------ */
+/* Design tokens                                                       */
+/* ------------------------------------------------------------------ */
+
+:root {
+  --background: #08070a;
+  --background-elevated: #0e0d12;
+  --foreground: #f4f0e9;
+  --muted: #8f8779;
+  --muted-strong: #b8afa1;
+  --accent: #e0a95e;
+  --accent-strong: #f0bd76;
+  --accent-soft: #c99a5e;
+  --accent-deep: #a97b3c;
+  --signal: #7fc7c4;
+  --signal-soft: #a7ded9;
+  --surface: #18161c8c;
+  --surface-strong: #1e1c24c7;
+  --surface-border: #e0a95e24;
+  --surface-border-strong: #e0a95e47;
+  --glow: #e0a95e38;
+  --grid-line: #e0a95e0d;
+  /* Texto decorativo (marquee): contraste mínimo de 3:1 para texto grande. */
+  --marquee-strong: #6e675e;
+  --marquee-soft: #635d55;
+  --gradient-accent: linear-gradient(108deg, #f0bd76 0%, #e0a95e 42%, #c99a5e 70%, #a7ded9 130%);
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-background-elevated: var(--background-elevated);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-muted-strong: var(--muted-strong);
+  --color-accent: var(--accent);
+  --color-accent-strong: var(--accent-strong);
+  --color-accent-soft: var(--accent-soft);
+  --color-accent-deep: var(--accent-deep);
+  --color-signal: var(--signal);
+  --color-signal-soft: var(--signal-soft);
+  --color-surface: var(--surface);
+  --color-surface-strong: var(--surface-strong);
+  --color-surface-border: var(--surface-border);
+  --color-surface-border-strong: var(--surface-border-strong);
+  --color-marquee-strong: var(--marquee-strong);
+  --color-marquee-soft: var(--marquee-soft);
+
+  --font-display: var(--font-syne), "Syne", system-ui, sans-serif;
+  --font-sans: var(--font-dm-sans), "DM Sans", system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains), "JetBrains Mono", ui-monospace, monospace;
+}
+
+@theme {
+  --animate-aurora: aurora-drift 18s ease-in-out infinite;
+  --animate-float: float 7s ease-in-out infinite;
+  --animate-pulse-glow: pulse-glow 4s ease-in-out infinite;
+  --animate-shimmer: shimmer 1.8s linear infinite;
+  --animate-marquee: marquee var(--marquee-duration, 40s) linear infinite;
+  --animate-gradient-pan: gradient-pan 6s linear infinite;
+  --animate-scroll-dot: scroll-dot 1.8s ease-in-out infinite;
+
+  @keyframes aurora-drift {
+    0%,
+    100% {
+      transform: translate(0, 0) scale(1);
+    }
+    33% {
+      transform: translate(4%, -3%) scale(1.1);
+    }
+    66% {
+      transform: translate(-3%, 4%) scale(0.95);
+    }
+  }
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-22px);
+    }
+  }
+  @keyframes pulse-glow {
+    0%,
+    100% {
+      opacity: 0.35;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.75;
+      transform: scale(1.05);
+    }
+  }
+  @keyframes shimmer {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+  @keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  @keyframes gradient-pan {
+    0% {
+      background-position: 0% center;
+    }
+    100% {
+      background-position: 200% center;
+    }
+  }
+  @keyframes scroll-dot {
+    0% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    70% {
+      transform: translateY(12px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 0;
+    }
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* Base                                                                */
+/* ------------------------------------------------------------------ */
+
+@layer base {
+  * {
+    border-color: var(--surface-border);
+  }
+
+  html {
+    /* Reserva o espaço da barra de rolagem: evita deslocar o layout quando o preloader libera a rolagem. */
+    scrollbar-gutter: stable;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    background: var(--background);
+  }
+
+  html.lenis,
+  html.lenis body {
+    height: auto;
+  }
+
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+
+  .lenis.lenis-stopped {
+    overflow: clip;
+  }
+
+  body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+  }
+
+  /* Gradientes ambientes fixos atrás de todo o conteúdo. */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    pointer-events: none;
+    background:
+      radial-gradient(ellipse 90% 60% at 50% -10%, #e0a95e1f, transparent 70%),
+      radial-gradient(ellipse 60% 50% at 100% 20%, #7fc7c40f, transparent 60%),
+      radial-gradient(ellipse 70% 60% at 0% 90%, #e0a95e12, transparent 65%), var(--background);
+  }
+
+  /* Granulação sutil. */
+  body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0.035;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  ::selection {
+    color: var(--foreground);
+    background: #e0a95e47;
+  }
+
+  ::-webkit-scrollbar {
+    width: 9px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #e0a95e40;
+    border-radius: 999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #e0a95e66;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+
+  [id] {
+    scroll-margin-top: 5rem;
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* Utilitários do design system                                        */
+/* ------------------------------------------------------------------ */
+
+@utility glass {
+  background: var(--surface);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+  backdrop-filter: blur(20px) saturate(140%);
+  border: 1px solid var(--surface-border);
+}
+
+@utility glass-strong {
+  background: var(--surface-strong);
+  -webkit-backdrop-filter: blur(28px) saturate(150%);
+  backdrop-filter: blur(28px) saturate(150%);
+  border: 1px solid var(--surface-border);
+}
+
+@utility gradient-text {
+  background: var(--gradient-accent);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+@utility section-container {
+  position: relative;
+  width: 100%;
+  max-width: 72rem;
+  margin-inline: auto;
+  padding-inline: 1rem;
+  @media (min-width: 40rem) {
+    padding-inline: 1.5rem;
+  }
+  @media (min-width: 48rem) {
+    padding-inline: 2rem;
+  }
+}
+
+@utility bg-grid {
+  background-image:
+    linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+
+@utility bg-dots {
+  background-image: radial-gradient(#e0a95e24 1px, transparent 1px);
+  background-size: 26px 26px;
+}
+
+@utility mask-fade-edges {
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+}
+
+@utility mask-fade-y {
+  -webkit-mask-image: linear-gradient(transparent, #000 15%, #000 85%, transparent);
+  mask-image: linear-gradient(transparent, #000 15%, #000 85%, transparent);
+}
+
+@utility mask-radial {
+  -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, #000 30%, transparent 100%);
+  mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, #000 30%, transparent 100%);
+}
+
+@utility text-balance {
+  text-wrap: balance;
+}
+
+/* Borda animada (gradiente cônico girando) usada nos cards de projeto. */
+@property --angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+@keyframes border-spin {
+  to {
+    --angle: 360deg;
+  }
+}
+
+@keyframes preloader-rise {
+  from {
+    transform: translateY(110%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes preloader-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@layer components {
+  .card-border {
+    position: relative;
+    isolation: isolate;
+  }
+
+  .card-border::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    padding: 1px;
+    border-radius: inherit;
+    pointer-events: none;
+    opacity: 0;
+    background: conic-gradient(
+      from var(--angle, 0deg),
+      transparent 0%,
+      #e0a95eb3 12%,
+      transparent 32%,
+      transparent 100%
+    );
+    -webkit-mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask:
+      linear-gradient(#000 0 0) content-box exclude,
+      linear-gradient(#000 0 0);
+    transition: opacity 0.5s;
+  }
+
+  .card-border:hover::before,
+  .card-border:focus-within::before {
+    opacity: 1;
+    animation: border-spin 4s linear infinite;
+  }
+
+  /* Holofote dourado que segue o ponteiro (variáveis atualizadas via JS). */
+  .spotlight {
+    --x: 50%;
+    --y: 50%;
+  }
+
+  .spotlight-layer {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    border-radius: inherit;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s;
+    background: radial-gradient(
+      var(--spotlight-size, 600px) circle at var(--x) var(--y),
+      rgba(224, 169, 94, var(--spotlight-alpha, 0.07)),
+      transparent 55%
+    );
+  }
+
+  .spotlight:hover > .spotlight-layer,
+  .spotlight:focus-within > .spotlight-layer {
+    opacity: 1;
+  }
+}
+
+/*
+ * Pré-carregamento: o script inline no <head> decide se ele aparece.
+ * Fora de @layer de propósito: estilos sem camada vencem utilitários como `flex`.
+ */
+html.no-preloader #preloader {
+  display: none;
+}
+
+html.is-loading,
+html.is-loading body {
+  overflow: hidden;
+}
+
+.preloader-exit {
+  transform: translateY(-100%);
+  transition: transform 0.6s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+/* ------------------------------------------------------------------ */
+/* Movimento reduzido                                                  */
+/* ------------------------------------------------------------------ */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.001ms !important;
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+  }
+
+  .card-border:hover::before {
+    animation: none;
+  }
+}
