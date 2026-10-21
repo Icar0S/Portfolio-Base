@@ -56,9 +56,10 @@ export const profile = {
       href: "https://www.linkedin.com/in/icaro-santos-oliveira/",
       label: "in/icaro-santos-oliveira",
     },
-    // [INSERIR] URL do Currículo Lattes, ex.: "http://lattes.cnpq.br/0000000000000000".
-    // Enquanto for null, o ícone do Lattes não aparece no rodapé.
-    lattes: null as string | null,
+    lattes: {
+      href: "http://lattes.cnpq.br/4886446557733068",
+      label: "lattes.cnpq.br/4886446557733068"
+    },
   },
 
   /** Currículos em PDF dentro de `public/`. */
