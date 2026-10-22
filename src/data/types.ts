@@ -73,9 +73,14 @@ export type TimelineItem = {
   /** Aceita **negrito** no texto. */
   highlights: Localized[];
   tags?: string[];
-  media?: (ImageAsset & { caption: Localized })[];
+  /** `document: true` exibe a imagem como miniatura de documento (ex.: certificado em retrato). */
+  media?: (ImageAsset & { caption: Localized; document?: boolean })[];
   /** Slugs de projetos relacionados (viram links para as páginas de detalhe). */
   projects?: string[];
+  /** ID da credencial (certificações). */
+  credential?: string;
+  /** Arquivos em `public/` para abrir/baixar (ex.: certificado em PDF). */
+  documents?: { label: Localized; href: string }[];
 };
 
 /* ----------------------------- Projetos ----------------------------- */

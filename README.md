@@ -20,6 +20,22 @@ O assistente **Portfolio AI** (botão no canto inferior direito) também é 100%
 conteúdo de `src/data` vira uma base de conhecimento em JSON (`/kb/pt.json` e `/kb/en.json`), e a
 recuperação é feita no navegador com **BM25** — a resposta mostra o trecho e cita a seção de origem.
 
+## Versão para agentes e LLMs
+
+Cada página tem uma versão em **Markdown** gerada no build a partir de `src/data` (sem HTML, menus ou scripts):
+
+| URL                                                          | Conteúdo                                                                     |
+| ------------------------------------------------------------ | ---------------------------------------------------------------------------- |
+| `/llms.txt`                                                  | índice no padrão [llms.txt](https://llmstxt.org), com links para tudo abaixo |
+| `/llms-full.txt`                                             | o portfólio inteiro (home + todos os projetos) em um único arquivo           |
+| `/index.md` e `/en/index.md`                                 | home completa (perfil, habilidades, trajetória, projetos, pesquisa, contato) |
+| `/projetos/<slug>/index.md` e `/en/projects/<slug>/index.md` | página de cada projeto                                                       |
+
+Toda página HTML aponta para a sua versão com `<link rel="alternate" type="text/markdown">`.
+O GitHub Pages é estático e não faz negociação pelo header `Accept: text/markdown` (isso exige
+servidor ou edge function, como middleware na Vercel ou um Worker na Cloudflare); por isso o
+Markdown fica em URLs próprias. O gerador está em `src/lib/markdown.ts`.
+
 ## Rodar localmente
 
 Requisitos: **Node.js 22.12+** (versão em `.nvmrc`, a mesma do CI). Com Node 20 o `npm ci` mostra avisos `EBADENGINE`.
@@ -56,6 +72,10 @@ Trechos entre `**asteriscos duplos**` aparecem em destaque. O primeiro projeto d
   Para trocar uma captura, substitua o arquivo em `assets/` mantendo o nome e rode o script.
 - **Foto do hero:** `assets/Icaro Santos (58).jpg` → `src/assets/images/profile.webp`.
 - **Currículos:** `public/cv-icaro-santos.pdf` (PT) e `public/cv-icaro-santos-en.pdf` (EN).
+- **Certificados:** arquivos para download em `public/certificados/` (cadastrados em `documents` nos itens de
+  `src/data/experience.ts`); as miniaturas saem de `assets/cert-*.png` via `npm run images`.
+  **Nunca coloque em `public/` documentos com dados pessoais** (CPF, RG etc.): tudo ali é publicado e o
+  repositório é público. Guarde-os em `private/`, que é ignorada pelo git.
 - **Imagem de compartilhamento e ícones:** `npm run og` gera `public/og-image.png` (1200×630),
   `src/app/icon.png` e `src/app/apple-icon.png` (precisa de internet para baixar as fontes).
 
@@ -92,4 +112,5 @@ ajuste-o lá e em `src/lib/site.ts` (`siteUrl`).
 ## Pendências para revisar
 
 - `[CONFIRMAR]` tecnologias que não aparecem no currículo nem nos repositórios: axe-core, Next.js, LangChain e Figma (`src/data/skills.ts`).
+- `[CONFIRMAR]` ano de início no Instituto Atlântico e ano de saída da CAGECE; `[PREENCHER]` principais entregas no Instituto Atlântico (`src/data/experience.ts`).
 - `[CONFIRMAR]` seu papel no DOM-Heal (TCC de Jonnas Christian, UECE) — campo `credit` em `src/data/projects.ts`.

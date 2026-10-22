@@ -1,7 +1,7 @@
 "use client";
 
 import { m, useScroll, useSpring } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, FileText } from "lucide-react";
 import Image, { type StaticImageData } from "next/image";
 import Link from "next/link";
 import { useRef } from "react";
@@ -22,8 +22,10 @@ export type JourneyEntry = {
   location?: string;
   highlights: string[];
   tags: string[];
-  media: { image: StaticImageData; alt: string; caption: string }[];
+  media: { image: StaticImageData; alt: string; caption: string; document?: boolean }[];
   projects: { href: string; title: string }[];
+  credential?: string;
+  documents: { label: string; href: string }[];
 };
 
 export type JourneyProps = {
@@ -32,10 +34,23 @@ export type JourneyProps = {
   title: string;
   subtitle: string;
   relatedLabel: string;
+  credentialLabel: string;
+  newTabLabel: string;
   groups: { id: string; label: string; entries: JourneyEntry[] }[];
 };
 
-function Entry({ entry, relatedLabel }: { entry: JourneyEntry; relatedLabel: string }) {
+function Entry({
+  entry,
+  relatedLabel,
+  credentialLabel,
+  newTabLabel,
+}: {
+  entry: JourneyEntry;
+  relatedLabel: string;
+  credentialLabel: string;
+  newTabLabel: string;
+}) {
+  const documentMedia = entry.media.length > 0 && entry.media.every((media) => media.document);
   return (
     <li className="relative pb-12 pl-16 last:pb-0 md:pl-28">
       <m.div
@@ -59,6 +74,11 @@ function Entry({ entry, relatedLabel }: { entry: JourneyEntry; relatedLabel: str
           </p>
           <h4 className="mt-3 font-display text-xl font-bold text-foreground md:text-2xl">{entry.title}</h4>
           <p className="mt-1.5 text-sm font-medium text-accent-strong md:text-[15px]">{entry.org}</p>
+          {entry.credential ? (
+            <p className="mt-2 font-mono text-[11px] tracking-wider text-muted">
+              {credentialLabel}: <span className="text-muted-strong">{entry.credential}</span>
+            </p>
+          ) : null}
 
           {entry.highlights.length > 0 ? (
             <ul className="mt-5 space-y-3">
@@ -73,7 +93,31 @@ function Entry({ entry, relatedLabel }: { entry: JourneyEntry; relatedLabel: str
             </ul>
           ) : null}
 
-          {entry.media.length > 0 ? (
+          {documentMedia ? (
+            <div className="mt-6 flex flex-wrap gap-4">
+              {entry.media.map((media) => (
+                <figure
+                  key={media.caption}
+                  className="w-36 overflow-hidden rounded-xl border border-surface-border bg-white sm:w-40"
+                >
+                  <div className="relative aspect-[480/679]">
+                    <Image
+                      src={media.image}
+                      alt={media.alt}
+                      fill
+                      sizes="160px"
+                      className="object-cover transition-transform duration-900 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.03]"
+                    />
+                  </div>
+                  <figcaption className="border-t border-surface-border bg-background-elevated px-3 py-2 font-mono text-[10px] tracking-wide text-muted-strong">
+                    {media.caption}
+                  </figcaption>
+                </figure>
+              ))}
+            </div>
+          ) : null}
+
+          {entry.media.length > 0 && !documentMedia ? (
             <div className={entry.media.length > 1 ? "mt-6 grid gap-4 sm:grid-cols-2" : "mt-6 max-w-md"}>
               {entry.media.map((media) => (
                 <figure
@@ -96,6 +140,28 @@ function Entry({ entry, relatedLabel }: { entry: JourneyEntry; relatedLabel: str
                 </figure>
               ))}
             </div>
+          ) : null}
+
+          {entry.documents.length > 0 ? (
+            <ul className="mt-5 flex flex-wrap gap-2">
+              {entry.documents.map((document) => (
+                <li key={document.href}>
+                  <a
+                    href={document.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 rounded-full bg-accent px-3.5 py-1.5 text-xs font-semibold text-background transition-colors hover:bg-accent-strong"
+                  >
+                    <FileText className="h-3.5 w-3.5" aria-hidden="true" />
+                    {document.label}
+                    <span className="sr-only">
+                      {" "}
+                      — {entry.title} {newTabLabel}
+                    </span>
+                  </a>
+                </li>
+              ))}
+            </ul>
           ) : null}
 
           {entry.tags.length > 0 ? (
@@ -124,7 +190,16 @@ function Entry({ entry, relatedLabel }: { entry: JourneyEntry; relatedLabel: str
   );
 }
 
-export function Journey({ id, eyebrow, title, subtitle, relatedLabel, groups }: JourneyProps) {
+export function Journey({
+  id,
+  eyebrow,
+  title,
+  subtitle,
+  relatedLabel,
+  credentialLabel,
+  newTabLabel,
+  groups,
+}: JourneyProps) {
   const timeline = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: timeline, offset: ["start 75%", "end 60%"] });
   const scaleY = useSpring(scrollYProgress, { stiffness: 90, damping: 24, restDelta: 0.001 });
@@ -161,7 +236,13 @@ export function Journey({ id, eyebrow, title, subtitle, relatedLabel, groups }: 
               </div>
               <ol>
                 {group.entries.map((entry) => (
-                  <Entry key={entry.id} entry={entry} relatedLabel={relatedLabel} />
+                  <Entry
+                    key={entry.id}
+                    entry={entry}
+                    relatedLabel={relatedLabel}
+                    credentialLabel={credentialLabel}
+                    newTabLabel={newTabLabel}
+                  />
                 ))}
               </ol>
             </div>

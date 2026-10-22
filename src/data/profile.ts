@@ -75,12 +75,12 @@ export const profile = {
     },
     paragraphs: [
       {
-        pt: "Sou **QA Engineer** e **Analista de Sistemas** com mais de 6 anos de experiência, atualmente na **CAGECE** (Companhia de Água e Esgoto do Ceará), e **doutorando em Ciência da Computação na UECE**, onde pesquiso testes de sistemas baseados em **LLM e RAG**. Transito entre frontend, backend, automação de testes e UI/UX — e uso essa visão completa para construir produtos que funcionam bem, parecem bem e não quebram em produção.",
-        en: "I'm a **QA Engineer** and **Systems Analyst** with 6+ years of experience, currently at **CAGECE** (Ceará Water and Sewage Company), and a **PhD student in Computer Science at UECE**, researching how to test **LLM- and RAG-based systems**. I move across frontend, backend, test automation and UI/UX — and use that end-to-end view to build products that work well, look good and don't break in production.",
+        pt: "Sou **Analista de Qualidade de Software no Instituto Atlântico**, com mais de seis anos de experiência em Engenharia de Qualidade e Testes de Software, e **doutorando em Ciência da Computação na UECE**, onde pesquiso o teste e a garantia de qualidade de sistemas baseados em **LLM e RAG**. Transito entre frontend, backend, automação de testes e UI/UX — e uso essa visão completa para construir produtos que funcionam bem, parecem bem e não quebram em produção.",
+        en: "I'm a **Software Quality Analyst at Instituto Atlântico**, with 6+ years of experience in software quality engineering and testing, and a **PhD student in Computer Science at UECE**, researching testing and quality assurance of **LLM- and RAG-based systems**. I move across frontend, backend, test automation and UI/UX — and use that end-to-end view to build products that work well, look good and don't break in production.",
       },
       {
-        pt: "Sou **mestre em Ciência da Computação** pela UECE, com dissertação em teste de sistemas Big Data e qualidade de dados, e **certificado ISTQB® CTFL**. Já atuei em projetos governamentais e corporativos de missão crítica — como a Plataforma Antonieta de Barros (FNDE) e a plataforma Big Data Fortaleza (Iplanfor).",
-        en: "I hold an **MSc in Computer Science** from UECE, with a dissertation on testing Big Data systems and data quality, and I'm **ISTQB® CTFL certified**. I've worked on mission-critical government and enterprise projects — such as FNDE's Antonieta de Barros Platform and the Big Data Fortaleza platform (Iplanfor).",
+        pt: "Sou **mestre em Ciência da Computação** pela UECE, engenheiro da computação pelo IFCE, pós-graduado em Desenvolvimento Fullstack, **membro do GESAD** e **certificado ISTQB® CTFL e CT-AI (AI Testing)**. Passei pela equipe de Qualidade da CAGECE e pelo projeto Antonieta de Barros (FNDE/GREat), onde liderei o time de QA e estruturei a automação E2E (Playwright) e de API (Pytest) integrada a pipelines de CI/CD. Também cooriento trabalhos de iniciação científica e de conclusão de curso.",
+        en: "I hold an **MSc in Computer Science** from UECE, a BSc in Computer Engineering from IFCE and a postgraduate degree in Full Stack Development; I'm a **member of GESAD** and **ISTQB® CTFL and CT-AI (AI Testing) certified**. I worked on CAGECE's Quality team and on the Antonieta de Barros project (FNDE/GREat), where I led the QA team and set up E2E (Playwright) and API (Pytest) automation integrated into CI/CD pipelines. I also co-supervise undergraduate research and capstone projects.",
       },
     ] satisfies Localized[],
     pillars: [
@@ -108,8 +108,11 @@ export const profile = {
     ] satisfies { title: Localized; text: Localized }[],
     facts: [
       { icon: "globe", label: { pt: "Fortaleza, CE · Brasil", en: "Fortaleza, CE · Brazil" } },
-      { icon: "award", label: { pt: "ISTQB® CTFL · 2025", en: "ISTQB® CTFL · 2025" } },
-      { icon: "graduation-cap", label: { pt: "Doutorando · UECE", en: "PhD student · UECE" } },
+      { icon: "award", label: { pt: "ISTQB® CTFL · CT-AI", en: "ISTQB® CTFL · CT-AI" } },
+      {
+        icon: "graduation-cap",
+        label: { pt: "Doutorando · UECE · GESAD", en: "PhD student · UECE · GESAD" },
+      },
     ] satisfies { icon: IconName; label: Localized }[],
   },
 

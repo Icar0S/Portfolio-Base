@@ -1,4 +1,7 @@
 import bdfImage from "@/assets/images/big-data-fortaleza.webp";
+import certCJovem from "@/assets/images/cert-capacita-brasil-c-jovem.webp";
+import certCtAi from "@/assets/images/cert-istqb-ct-ai.webp";
+import certCtfl from "@/assets/images/cert-istqb-ctfl.webp";
 import byndImage from "@/assets/images/bynd.webp";
 import fndeImage from "@/assets/images/fnde-antonieta-de-barros.webp";
 import pinkImage from "@/assets/images/pinkapp.webp";
@@ -16,6 +19,22 @@ export const timelineGroups: { id: TimelineGroup; label: Localized }[] = [
 export const timeline: TimelineItem[] = [
   /* ---------------------------- Experiência ---------------------------- */
   {
+    // [CONFIRMAR] ano de início no Instituto Atlântico e cidade/modalidade (o Lattes não informa).
+    id: "atlantico",
+    group: "work",
+    icon: "shield-check",
+    title: { pt: "Analista de Qualidade de Software", en: "Software Quality Analyst" },
+    org: { pt: "Instituto Atlântico", en: "Instituto Atlântico" },
+    period: { pt: "2026 — Atual", en: "2026 — Present" },
+    highlights: [
+      {
+        // [PREENCHER] principais entregas no Instituto Atlântico.
+        pt: "Atuação em engenharia de qualidade e testes de software.",
+        en: "Software quality engineering and testing.",
+      },
+    ],
+  },
+  {
     id: "cagece",
     group: "work",
     icon: "droplets",
@@ -24,7 +43,8 @@ export const timeline: TimelineItem[] = [
       pt: "Companhia de Água e Esgoto do Ceará (CAGECE)",
       en: "Ceará Water and Sewage Company (CAGECE)",
     },
-    period: { pt: "2025 — Atual", en: "2025 — Present" },
+    // [CONFIRMAR] ano de saída da CAGECE.
+    period: { pt: "2025 — 2026", en: "2025 — 2026" },
     location: { pt: "Fortaleza/CE", en: "Fortaleza, Brazil" },
     highlights: [
       {
@@ -190,8 +210,8 @@ export const timeline: TimelineItem[] = [
     period: { pt: "2026 — 2029 (em curso)", en: "2026 — 2029 (ongoing)" },
     highlights: [
       {
-        pt: "**Tese:** teste e garantia de qualidade de sistemas baseados em LLM com RAG.",
-        en: "**Thesis:** testing and quality assurance of LLM-based systems with RAG.",
+        pt: "**Tese:** teste e garantia de qualidade de sistemas baseados em LLM com RAG — um protocolo de testes com ênfase na qualidade do corpus e da recuperação, apoiado em mineração de literatura cinzenta e evidências empíricas.",
+        en: "**Thesis:** testing and quality assurance of LLM-based systems with RAG — a testing protocol focused on corpus and retrieval quality, grounded in grey-literature mining and empirical evidence.",
       },
       {
         pt: "Orientador: Prof. Dr. Ismayle S. Santos · Coorientadora: Profa. Dra. Rossana M. C. Andrade.",
@@ -204,12 +224,19 @@ export const timeline: TimelineItem[] = [
     group: "education",
     icon: "microscope",
     title: { pt: "Mestrado em Ciência da Computação", en: "MSc in Computer Science" },
-    org: { pt: "Universidade Estadual do Ceará (UECE)", en: "State University of Ceará (UECE)" },
+    org: {
+      pt: "Universidade Estadual do Ceará (UECE) · GESAD",
+      en: "State University of Ceará (UECE) · GESAD",
+    },
     period: { pt: "Mar. 2024 — Mar. 2026", en: "Mar. 2024 — Mar. 2026" },
     highlights: [
       {
-        pt: "**Dissertação:** teste de sistemas Big Data e qualidade de dados, com revisão multivocal da literatura e o **SmartDataTest**, ferramenta de apoio assistida por LLM/RAG.",
-        en: "**Dissertation:** testing Big Data systems and data quality, combining a multivocal literature review with **SmartDataTest**, an LLM/RAG-assisted support tool.",
+        pt: "**Dissertação:** teste de sistemas Big Data e qualidade de dados, por meio de uma revisão multivocal que triangula literatura branca, literatura cinzenta e prática industrial — com publicações no SBQS 2024, ICEIS 2025 e LNBIP.",
+        en: "**Dissertation:** testing Big Data systems and data quality through a multivocal review that triangulates white literature, grey literature and industrial practice — published at SBQS 2024, ICEIS 2025 and LNBIP.",
+      },
+      {
+        pt: "Desenvolvimento do **SmartDataTest**, plataforma assistida por LLMs e RAG que gera regras de qualidade de dados e código PySpark.",
+        en: "Built **SmartDataTest**, an LLM- and RAG-assisted platform that generates data quality rules and PySpark code.",
       },
     ],
     projects: ["smartdatatest"],
@@ -226,8 +253,13 @@ export const timeline: TimelineItem[] = [
       pt: "Centro Universitário União das Américas — Descomplica",
       en: "Centro Universitário União das Américas — Descomplica",
     },
-    period: { pt: "2023 — 2024", en: "2023 — 2024" },
-    highlights: [],
+    period: { pt: "Ago. 2023 — Mar. 2024", en: "Aug. 2023 — Mar. 2024" },
+    highlights: [
+      {
+        pt: "Disciplinas de front-end e back-end (do intermediário ao avançado), cloud na AWS, banco de dados, interface de software e refatoração.",
+        en: "Courses on front-end and back-end (intermediate to advanced), AWS cloud, databases, software interfaces and refactoring.",
+      },
+    ],
   },
   {
     id: "bsc",
@@ -241,31 +273,121 @@ export const timeline: TimelineItem[] = [
 
   /* ---------------------- Certificações e atividades ---------------------- */
   {
-    id: "istqb",
+    id: "istqb-ct-ai",
+    group: "extra",
+    icon: "brain",
+    title: {
+      pt: "ISTQB® Certified Tester — AI Testing (CT-AI)",
+      en: "ISTQB® Certified Tester — AI Testing (CT-AI)",
+    },
+    org: { pt: "BSTQB® · ISTQB®", en: "BSTQB® · ISTQB®" },
+    period: { pt: "Out. 2026", en: "Oct. 2026" },
+    highlights: [
+      {
+        pt: "Certificação internacional em **teste de sistemas baseados em IA**: características de qualidade de IA, teste de sistemas de aprendizado de máquina e uso de IA no teste de software.",
+        en: "International certification in **testing AI-based systems**: AI quality characteristics, testing machine learning systems and using AI for software testing.",
+      },
+    ],
+    credential: "26-CT-AI-16299-BR",
+    documents: [
+      { label: { pt: "Certificado (PDF)", en: "Certificate (PDF)" }, href: "/certificados/istqb-ct-ai.pdf" },
+    ],
+    media: [
+      {
+        image: certCtAi,
+        alt: {
+          pt: "Certificado ISTQB Certified Tester AI Testing (CT-AI) emitido pelo BSTQB para Icaro Santos de Oliveira",
+          en: "ISTQB Certified Tester AI Testing (CT-AI) certificate issued by BSTQB to Icaro Santos de Oliveira",
+        },
+        caption: { pt: "CT-AI · válido mundialmente", en: "CT-AI · valid worldwide" },
+        document: true,
+      },
+    ],
+  },
+  {
+    id: "istqb-ctfl",
     group: "extra",
     icon: "award",
     title: {
       pt: "ISTQB® Certified Tester — Foundation Level (CTFL)",
       en: "ISTQB® Certified Tester — Foundation Level (CTFL)",
     },
-    org: { pt: "BSTQB®", en: "BSTQB®" },
+    org: { pt: "BSTQB® · ISTQB®", en: "BSTQB® · ISTQB®" },
     period: { pt: "Mar. 2025", en: "Mar. 2025" },
-    highlights: [],
+    highlights: [
+      {
+        pt: "Certificação de base em teste de software reconhecida internacionalmente.",
+        en: "Internationally recognised foundation certification in software testing.",
+      },
+    ],
+    credential: "25-CTFL-13972-BR",
+    documents: [
+      { label: { pt: "Certificado (PDF)", en: "Certificate (PDF)" }, href: "/certificados/istqb-ctfl.pdf" },
+    ],
+    media: [
+      {
+        image: certCtfl,
+        alt: {
+          pt: "Certificado ISTQB Certified Tester Foundation Level (CTFL) emitido pelo BSTQB para Icaro Santos de Oliveira",
+          en: "ISTQB Certified Tester Foundation Level (CTFL) certificate issued by BSTQB to Icaro Santos de Oliveira",
+        },
+        caption: { pt: "CTFL · válido mundialmente", en: "CTFL · valid worldwide" },
+        document: true,
+      },
+    ],
   },
   {
     id: "pibic",
     group: "extra",
     icon: "users",
     title: {
-      pt: "Supervisão técnica de bolsista de Iniciação Científica (IC/PIBIC)",
-      en: "Technical supervision of an undergraduate research fellow (PIBIC)",
+      pt: "Coorientação de Iniciação Científica e TCC",
+      en: "Co-supervision of undergraduate research and capstone projects",
     },
     org: { pt: "UECE", en: "UECE" },
     period: { pt: "2026 — Atual", en: "2026 — Present" },
     highlights: [
       {
-        pt: "Projeto sobre qualidade de dados e de índices para sistemas RAG.",
-        en: "Project on data and index quality for RAG systems.",
+        pt: "Coorientação de trabalhos de iniciação científica e de conclusão de curso.",
+        en: "Co-supervision of undergraduate research and capstone (final-year) projects.",
+      },
+      {
+        pt: "Supervisão técnica de bolsista IC/PIBIC em projeto sobre qualidade de dados e de índices para sistemas RAG.",
+        en: "Technical supervision of a PIBIC research fellow on data and index quality for RAG systems.",
+      },
+    ],
+  },
+  {
+    id: "c-jovem",
+    group: "extra",
+    icon: "book-open",
+    title: { pt: "Professor de Lógica de Programação", en: "Programming Logic Instructor" },
+    org: {
+      pt: "Residência em TIC 20 — Capacita Brasil / C-Jovem (UECE)",
+      en: "ICT Residency 20 — Capacita Brasil / C-Jovem (UECE)",
+    },
+    period: { pt: "Jan. — Fev. 2025", en: "Jan. — Feb. 2025" },
+    location: { pt: "Fortaleza/CE", en: "Fortaleza, Brazil" },
+    highlights: [
+      {
+        pt: "Aulas de **lógica de programação** (48 h) no programa de residência em TIC Capacita Brasil/C-Jovem, executado pela UECE e pelo Instituto Atlântico, com coordenação da Softex e apoio do MCTI.",
+        en: "Taught **programming logic** (48 h) in the Capacita Brasil/C-Jovem ICT residency programme, run by UECE and Instituto Atlântico, coordinated by Softex and supported by Brazil's Ministry of Science and Technology.",
+      },
+    ],
+    documents: [
+      {
+        label: { pt: "Certificado", en: "Certificate" },
+        href: "/certificados/capacita-brasil-c-jovem.webp",
+      },
+    ],
+    media: [
+      {
+        image: certCJovem,
+        alt: {
+          pt: "Certificado do Programa Residência em TIC 20 — Capacita Brasil/C-Jovem atestando a atuação como professor de Lógica de Programação",
+          en: "Certificate from the ICT Residency 20 — Capacita Brasil/C-Jovem programme for teaching Programming Logic",
+        },
+        caption: { pt: "Capacita Brasil / C-Jovem · 48 h", en: "Capacita Brasil / C-Jovem · 48 h" },
       },
     ],
   },

@@ -12,7 +12,9 @@ test.describe("Responsividade", () => {
       await page.setViewportSize({ width, height: 900 });
       for (const path of ["./", "projetos/smartdatatest/"]) {
         await page.goto(path);
-        await revealAll(page);
+        // Rolagem rápida até o fim: o overflow não depende das animações de entrada.
+        await page.evaluate(() => window.scrollTo(0, document.documentElement.scrollHeight));
+        await page.waitForTimeout(400);
         expect(await horizontalOverflow(page), `overflow em ${width}px (/${path})`).toBeLessThanOrEqual(0);
       }
     }

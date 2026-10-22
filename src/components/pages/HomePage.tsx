@@ -64,6 +64,8 @@ export function HomePage({ locale }: { locale: Locale }) {
           title={copy.journey.title}
           subtitle={copy.journey.subtitle}
           relatedLabel={copy.journey.relatedProject}
+          credentialLabel={copy.journey.credential}
+          newTabLabel={copy.a11y.newTab}
           groups={timelineGroups.map((group) => ({
             id: group.id,
             label: group.label[locale],
@@ -82,6 +84,12 @@ export function HomePage({ locale }: { locale: Locale }) {
                   image: media.image,
                   alt: media.alt[locale],
                   caption: media.caption[locale],
+                  document: media.document,
+                })),
+                credential: item.credential,
+                documents: (item.documents ?? []).map((document) => ({
+                  label: document.label[locale],
+                  href: asset(document.href),
                 })),
                 projects: (item.projects ?? []).flatMap((slug) => {
                   const project = getProject(slug);

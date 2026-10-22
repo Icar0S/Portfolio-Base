@@ -52,6 +52,7 @@ const pt = {
     title: "Como construí minha carreira",
     subtitle: "Da engenharia à pesquisa — a evolução do meu trabalho.",
     relatedProject: "Ver projeto",
+    credential: "ID da credencial",
   },
   projects: {
     eyebrow: "Projetos",
@@ -197,6 +198,7 @@ const en: UiStrings = {
     title: "How I built my career",
     subtitle: "From engineering to research — how my work has evolved.",
     relatedProject: "View project",
+    credential: "Credential ID",
   },
   projects: {
     eyebrow: "Projects",
