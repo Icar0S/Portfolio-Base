@@ -61,10 +61,10 @@ export const publications: Publication[] = [
       en: "11th Brazilian Symposium on Systematic and Automated Software Testing (SAST 2026), CBSoft, São Paulo, Brazil — ACM",
     },
     year: "2026",
-    status: { pt: "Aceito", en: "Accepted" },
+    status: { pt: "Apresentado", en: "Presented" },
     note: {
-      pt: "Artefato também aceito na trilha de Artefatos (Apache 2.0).",
-      en: "Artefact also accepted in the Artefacts track (Apache 2.0). In Portuguese.",
+      pt: "Selo Artifacts Available — artefato aberto (Apache 2.0).",
+      en: "Artifacts Available badge — open artefact (Apache 2.0). In Portuguese.",
     },
     doi: "10.5281/zenodo.21837636",
     project: "arquitetura-testes-rag",
@@ -82,7 +82,7 @@ export const publications: Publication[] = [
       en: "14th Workshop on Software Visualization, Evolution and Maintenance (VEM 2026), CBSoft, São Paulo, Brazil",
     },
     year: "2026",
-    status: { pt: "Publicado", en: "Published" },
+    status: { pt: "Apresentado", en: "Presented" },
     note: { pt: "", en: "In Portuguese." },
     project: "erp-protheus",
   },
@@ -99,7 +99,7 @@ export const publications: Publication[] = [
       en: "5th Brazilian Workshop on Intelligent Software Engineering (ISE 2026), CBSoft, São Paulo, Brazil — ACM",
     },
     year: "2026",
-    status: { pt: "Publicado", en: "Published" },
+    status: { pt: "Apresentado", en: "Presented" },
     note: { pt: "Pacote de replicação disponível.", en: "Replication package available." },
     doi: "10.5281/zenodo.20947923",
   },
@@ -146,6 +146,9 @@ export const researchAreas: Localized[] = [
   { pt: "Revisão multivocal (MLR/MSR)", en: "Multivocal reviews (MLR/MSR)" },
   { pt: "CI/CD e regressão semântica", en: "CI/CD and semantic regression" },
   { pt: "SE4AI", en: "SE4AI" },
+  { pt: "Teste de sistemas de IA", en: "Testing AI systems" },
+  { pt: "Automação de testes", en: "Test automation" },
+  { pt: "IA aplicada à Engenharia de Software", en: "AI for Software Engineering" },
 ];
 
 export const artifacts: Artifact[] = [
@@ -178,14 +181,14 @@ export const artifacts: Artifact[] = [
 /** Supervisão de pesquisa (também aparece na linha do tempo). */
 export const academicActivity = {
   title: {
-    pt: "Supervisão técnica de bolsista de Iniciação Científica (IC/PIBIC)",
-    en: "Technical supervision of an undergraduate research fellow (PIBIC)",
+    pt: "Coorientação de Iniciação Científica e TCC",
+    en: "Co-supervision of undergraduate research and capstone projects",
   },
   org: "UECE",
   period: { pt: "2026 — Atual", en: "2026 — Present" },
   description: {
-    pt: "Projeto sobre qualidade de dados e de índices para sistemas RAG.",
-    en: "Project on data and index quality for RAG systems.",
+    pt: "Coorienta trabalhos de IC e de conclusão de curso, incluindo um projeto PIBIC sobre qualidade de dados e de índices para sistemas RAG.",
+    en: "Co-supervises undergraduate research and capstone projects, including a PIBIC project on data and index quality for RAG systems.",
   },
 } satisfies { title: Localized; org: string; period: Localized; description: Localized };
 

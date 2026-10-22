@@ -92,4 +92,5 @@ ajuste-o lá e em `src/lib/site.ts` (`siteUrl`).
 ## Pendências para revisar
 
 - `[CONFIRMAR]` tecnologias que não aparecem no currículo nem nos repositórios: axe-core, Next.js, LangChain e Figma (`src/data/skills.ts`).
+- `[CONFIRMAR]` ano de início no Instituto Atlântico e ano de saída da CAGECE; `[PREENCHER]` principais entregas no Instituto Atlântico (`src/data/experience.ts`).
 - `[CONFIRMAR]` seu papel no DOM-Heal (TCC de Jonnas Christian, UECE) — campo `credit` em `src/data/projects.ts`.

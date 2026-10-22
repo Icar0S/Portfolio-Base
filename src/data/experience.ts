@@ -16,6 +16,22 @@ export const timelineGroups: { id: TimelineGroup; label: Localized }[] = [
 export const timeline: TimelineItem[] = [
   /* ---------------------------- Experiência ---------------------------- */
   {
+    // [CONFIRMAR] ano de início no Instituto Atlântico e cidade/modalidade (o Lattes não informa).
+    id: "atlantico",
+    group: "work",
+    icon: "shield-check",
+    title: { pt: "Analista de Qualidade de Software", en: "Software Quality Analyst" },
+    org: { pt: "Instituto Atlântico", en: "Instituto Atlântico" },
+    period: { pt: "2026 — Atual", en: "2026 — Present" },
+    highlights: [
+      {
+        // [PREENCHER] principais entregas no Instituto Atlântico.
+        pt: "Atuação em engenharia de qualidade e testes de software.",
+        en: "Software quality engineering and testing.",
+      },
+    ],
+  },
+  {
     id: "cagece",
     group: "work",
     icon: "droplets",
@@ -24,7 +40,8 @@ export const timeline: TimelineItem[] = [
       pt: "Companhia de Água e Esgoto do Ceará (CAGECE)",
       en: "Ceará Water and Sewage Company (CAGECE)",
     },
-    period: { pt: "2025 — Atual", en: "2025 — Present" },
+    // [CONFIRMAR] ano de saída da CAGECE.
+    period: { pt: "2025 — 2026", en: "2025 — 2026" },
     location: { pt: "Fortaleza/CE", en: "Fortaleza, Brazil" },
     highlights: [
       {
@@ -190,8 +207,8 @@ export const timeline: TimelineItem[] = [
     period: { pt: "2026 — 2029 (em curso)", en: "2026 — 2029 (ongoing)" },
     highlights: [
       {
-        pt: "**Tese:** teste e garantia de qualidade de sistemas baseados em LLM com RAG.",
-        en: "**Thesis:** testing and quality assurance of LLM-based systems with RAG.",
+        pt: "**Tese:** teste e garantia de qualidade de sistemas baseados em LLM com RAG — um protocolo de testes com ênfase na qualidade do corpus e da recuperação, apoiado em mineração de literatura cinzenta e evidências empíricas.",
+        en: "**Thesis:** testing and quality assurance of LLM-based systems with RAG — a testing protocol focused on corpus and retrieval quality, grounded in grey-literature mining and empirical evidence.",
       },
       {
         pt: "Orientador: Prof. Dr. Ismayle S. Santos · Coorientadora: Profa. Dra. Rossana M. C. Andrade.",
@@ -204,12 +221,19 @@ export const timeline: TimelineItem[] = [
     group: "education",
     icon: "microscope",
     title: { pt: "Mestrado em Ciência da Computação", en: "MSc in Computer Science" },
-    org: { pt: "Universidade Estadual do Ceará (UECE)", en: "State University of Ceará (UECE)" },
+    org: {
+      pt: "Universidade Estadual do Ceará (UECE) · GESAD",
+      en: "State University of Ceará (UECE) · GESAD",
+    },
     period: { pt: "Mar. 2024 — Mar. 2026", en: "Mar. 2024 — Mar. 2026" },
     highlights: [
       {
-        pt: "**Dissertação:** teste de sistemas Big Data e qualidade de dados, com revisão multivocal da literatura e o **SmartDataTest**, ferramenta de apoio assistida por LLM/RAG.",
-        en: "**Dissertation:** testing Big Data systems and data quality, combining a multivocal literature review with **SmartDataTest**, an LLM/RAG-assisted support tool.",
+        pt: "**Dissertação:** teste de sistemas Big Data e qualidade de dados, por meio de uma revisão multivocal que triangula literatura branca, literatura cinzenta e prática industrial — com publicações no SBQS 2024, ICEIS 2025 e LNBIP.",
+        en: "**Dissertation:** testing Big Data systems and data quality through a multivocal review that triangulates white literature, grey literature and industrial practice — published at SBQS 2024, ICEIS 2025 and LNBIP.",
+      },
+      {
+        pt: "Desenvolvimento do **SmartDataTest**, plataforma assistida por LLMs e RAG que gera regras de qualidade de dados e código PySpark.",
+        en: "Built **SmartDataTest**, an LLM- and RAG-assisted platform that generates data quality rules and PySpark code.",
       },
     ],
     projects: ["smartdatatest"],
@@ -257,15 +281,19 @@ export const timeline: TimelineItem[] = [
     group: "extra",
     icon: "users",
     title: {
-      pt: "Supervisão técnica de bolsista de Iniciação Científica (IC/PIBIC)",
-      en: "Technical supervision of an undergraduate research fellow (PIBIC)",
+      pt: "Coorientação de Iniciação Científica e TCC",
+      en: "Co-supervision of undergraduate research and capstone projects",
     },
     org: { pt: "UECE", en: "UECE" },
     period: { pt: "2026 — Atual", en: "2026 — Present" },
     highlights: [
       {
-        pt: "Projeto sobre qualidade de dados e de índices para sistemas RAG.",
-        en: "Project on data and index quality for RAG systems.",
+        pt: "Coorientação de trabalhos de iniciação científica e de conclusão de curso.",
+        en: "Co-supervision of undergraduate research and capstone (final-year) projects.",
+      },
+      {
+        pt: "Supervisão técnica de bolsista IC/PIBIC em projeto sobre qualidade de dados e de índices para sistemas RAG.",
+        en: "Technical supervision of a PIBIC research fellow on data and index quality for RAG systems.",
       },
     ],
   },
