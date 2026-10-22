@@ -52,6 +52,32 @@ test.describe("SEO e arquivos estáticos", () => {
     expect(knowledge.every((chunk) => chunk.title && chunk.href.startsWith("/"))).toBe(true);
   });
 
+  test("versões em Markdown para agentes (llms.txt e index.md)", async ({ page, request }) => {
+    for (const [path, heading] of [
+      ["index.md", "# Ícaro Santos de Oliveira"],
+      ["en/index.md", "# Ícaro Santos de Oliveira"],
+      ["projetos/smartdatatest/index.md", "# SmartDataTest"],
+      ["en/projects/dom-heal/index.md", "# DOM-Heal"],
+      ["llms.txt", "# Ícaro Santos de Oliveira"],
+      ["llms-full.txt", "# Ícaro Santos de Oliveira"],
+    ] as const) {
+      const response = await request.get(path);
+      expect(response.status(), path).toBe(200);
+      const body = await response.text();
+      expect(body.startsWith(heading), path).toBe(true);
+      expect(body, path).not.toMatch(/<\/?(div|span|script)/);
+    }
+    const markdown = await request.get("index.md");
+    expect(markdown.headers()["content-type"]).toContain("text/markdown");
+
+    // Cada página HTML anuncia a sua versão em Markdown.
+    await page.goto("projetos/smartdatatest/");
+    await expect(page.locator('link[rel="alternate"][type="text/markdown"]')).toHaveAttribute(
+      "href",
+      "https://icar0s.github.io/Portfolio-Base/projetos/smartdatatest/index.md",
+    );
+  });
+
   test("página 404 personalizada", async ({ page }) => {
     const response = await page.goto("pagina-que-nao-existe/");
     expect(response?.status()).toBe(404);

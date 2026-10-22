@@ -20,6 +20,22 @@ O assistente **Portfolio AI** (botão no canto inferior direito) também é 100%
 conteúdo de `src/data` vira uma base de conhecimento em JSON (`/kb/pt.json` e `/kb/en.json`), e a
 recuperação é feita no navegador com **BM25** — a resposta mostra o trecho e cita a seção de origem.
 
+## Versão para agentes e LLMs
+
+Cada página tem uma versão em **Markdown** gerada no build a partir de `src/data` (sem HTML, menus ou scripts):
+
+| URL                                                          | Conteúdo                                                                     |
+| ------------------------------------------------------------ | ---------------------------------------------------------------------------- |
+| `/llms.txt`                                                  | índice no padrão [llms.txt](https://llmstxt.org), com links para tudo abaixo |
+| `/llms-full.txt`                                             | o portfólio inteiro (home + todos os projetos) em um único arquivo           |
+| `/index.md` e `/en/index.md`                                 | home completa (perfil, habilidades, trajetória, projetos, pesquisa, contato) |
+| `/projetos/<slug>/index.md` e `/en/projects/<slug>/index.md` | página de cada projeto                                                       |
+
+Toda página HTML aponta para a sua versão com `<link rel="alternate" type="text/markdown">`.
+O GitHub Pages é estático e não faz negociação pelo header `Accept: text/markdown` (isso exige
+servidor ou edge function, como middleware na Vercel ou um Worker na Cloudflare); por isso o
+Markdown fica em URLs próprias. O gerador está em `src/lib/markdown.ts`.
+
 ## Rodar localmente
 
 Requisitos: **Node.js 22.12+** (versão em `.nvmrc`, a mesma do CI). Com Node 20 o `npm ci` mostra avisos `EBADENGINE`.

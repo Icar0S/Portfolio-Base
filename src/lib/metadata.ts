@@ -3,6 +3,7 @@ import { profile } from "@/data/profile";
 import type { Project } from "@/data/types";
 import { ui } from "@/data/ui";
 import { ogLocale, otherLocale, routes, t, type Locale } from "./i18n";
+import { markdownPath } from "./markdown";
 import { absoluteUrl, siteUrl } from "./site";
 
 const ogImage = (alt: string) => ({ url: absoluteUrl("/og-image.png"), width: 1200, height: 630, alt });
@@ -34,6 +35,8 @@ function base(locale: Locale, path: string, alternates: Record<Locale, string>):
     robots: { index: true, follow: true },
     alternates: {
       canonical: absoluteUrl(path),
+      // Versão em Markdown para agentes e LLMs (o GitHub Pages não negocia por `Accept`).
+      types: { "text/markdown": absoluteUrl(markdownPath(path)) },
       languages: {
         "pt-BR": absoluteUrl(alternates.pt),
         en: absoluteUrl(alternates.en),
