@@ -167,7 +167,11 @@ export function homeMarkdown(locale: Locale) {
       );
       for (const highlight of item.highlights) lines.push(`- ${highlight[locale]}`);
       if (item.tags?.length) lines.push(`- ${l.tech}: ${item.tags.join(", ")}`);
-      if (item.highlights.length || item.tags?.length) lines.push("");
+      if (item.credential) lines.push(`- ${copy.journey.credential}: ${item.credential}`);
+      for (const document of item.documents ?? [])
+        lines.push(`- [${document.label[locale]}](${absoluteUrl(document.href)})`);
+      if (item.highlights.length || item.tags?.length || item.credential || item.documents?.length)
+        lines.push("");
     }
   }
 

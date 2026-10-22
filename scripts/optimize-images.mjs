@@ -16,6 +16,7 @@ const output = path.join(root, "src", "assets", "images");
  * Cada entrada descreve um arquivo de saída.
  * - crop: recorte em pixels da imagem original (antes do resize)
  * - width/height: tamanho final; com os dois definidos, a imagem é recortada (cover)
+ * - dir: pasta de saída alternativa (ex.: "public/certificados" para arquivos baixáveis)
  */
 const jobs = [
   // Retrato do hero (4:5), recortado a partir do topo da foto de estúdio.
@@ -55,6 +56,22 @@ const jobs = [
   { from: "dashboards-web-home.png", to: "dashboards-web-home.webp", width: 1280, quality: 80 },
   { from: "dashboards-web-charts.png", to: "dashboards-web-charts.webp", width: 1193, quality: 80 },
   { from: "dashboards-web-admin.png", to: "dashboards-web-admin.webp", width: 1280, quality: 80 },
+  // Certificados: miniaturas para a linha do tempo e versão publicada para download.
+  { from: "cert-istqb-ctfl.png", to: "cert-istqb-ctfl.webp", width: 480, quality: 82 },
+  { from: "cert-istqb-ct-ai.png", to: "cert-istqb-ct-ai.webp", width: 480, quality: 82 },
+  {
+    from: "cert-capacita-brasil-c-jovem.png",
+    to: "cert-capacita-brasil-c-jovem.webp",
+    width: 960,
+    quality: 80,
+  },
+  {
+    from: "cert-capacita-brasil-c-jovem.png",
+    to: "capacita-brasil-c-jovem.webp",
+    dir: "public/certificados",
+    width: 2000,
+    quality: 82,
+  },
 ];
 
 await mkdir(output, { recursive: true });
@@ -69,7 +86,7 @@ for (const job of jobs) {
     position: "top",
     withoutEnlargement: true,
   });
-  const target = path.join(output, job.to);
+  const target = path.join(job.dir ? path.join(root, job.dir) : output, job.to);
   const info = await pipeline.webp({ quality: job.quality, effort: 6 }).toFile(target);
   const { size } = await stat(target);
   console.log(`${job.to.padEnd(34)} ${info.width}x${info.height}  ${(size / 1024).toFixed(1)} KB`);

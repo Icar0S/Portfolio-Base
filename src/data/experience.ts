@@ -1,4 +1,7 @@
 import bdfImage from "@/assets/images/big-data-fortaleza.webp";
+import certCJovem from "@/assets/images/cert-capacita-brasil-c-jovem.webp";
+import certCtAi from "@/assets/images/cert-istqb-ct-ai.webp";
+import certCtfl from "@/assets/images/cert-istqb-ctfl.webp";
 import byndImage from "@/assets/images/bynd.webp";
 import fndeImage from "@/assets/images/fnde-antonieta-de-barros.webp";
 import pinkImage from "@/assets/images/pinkapp.webp";
@@ -250,8 +253,13 @@ export const timeline: TimelineItem[] = [
       pt: "Centro Universitário União das Américas — Descomplica",
       en: "Centro Universitário União das Américas — Descomplica",
     },
-    period: { pt: "2023 — 2024", en: "2023 — 2024" },
-    highlights: [],
+    period: { pt: "Ago. 2023 — Mar. 2024", en: "Aug. 2023 — Mar. 2024" },
+    highlights: [
+      {
+        pt: "Disciplinas de front-end e back-end (do intermediário ao avançado), cloud na AWS, banco de dados, interface de software e refatoração.",
+        en: "Courses on front-end and back-end (intermediate to advanced), AWS cloud, databases, software interfaces and refactoring.",
+      },
+    ],
   },
   {
     id: "bsc",
@@ -265,16 +273,68 @@ export const timeline: TimelineItem[] = [
 
   /* ---------------------- Certificações e atividades ---------------------- */
   {
-    id: "istqb",
+    id: "istqb-ct-ai",
+    group: "extra",
+    icon: "brain",
+    title: {
+      pt: "ISTQB® Certified Tester — AI Testing (CT-AI)",
+      en: "ISTQB® Certified Tester — AI Testing (CT-AI)",
+    },
+    org: { pt: "BSTQB® · ISTQB®", en: "BSTQB® · ISTQB®" },
+    period: { pt: "Out. 2026", en: "Oct. 2026" },
+    highlights: [
+      {
+        pt: "Certificação internacional em **teste de sistemas baseados em IA**: características de qualidade de IA, teste de sistemas de aprendizado de máquina e uso de IA no teste de software.",
+        en: "International certification in **testing AI-based systems**: AI quality characteristics, testing machine learning systems and using AI for software testing.",
+      },
+    ],
+    credential: "26-CT-AI-16299-BR",
+    documents: [
+      { label: { pt: "Certificado (PDF)", en: "Certificate (PDF)" }, href: "/certificados/istqb-ct-ai.pdf" },
+    ],
+    media: [
+      {
+        image: certCtAi,
+        alt: {
+          pt: "Certificado ISTQB Certified Tester AI Testing (CT-AI) emitido pelo BSTQB para Icaro Santos de Oliveira",
+          en: "ISTQB Certified Tester AI Testing (CT-AI) certificate issued by BSTQB to Icaro Santos de Oliveira",
+        },
+        caption: { pt: "CT-AI · válido mundialmente", en: "CT-AI · valid worldwide" },
+        document: true,
+      },
+    ],
+  },
+  {
+    id: "istqb-ctfl",
     group: "extra",
     icon: "award",
     title: {
       pt: "ISTQB® Certified Tester — Foundation Level (CTFL)",
       en: "ISTQB® Certified Tester — Foundation Level (CTFL)",
     },
-    org: { pt: "BSTQB®", en: "BSTQB®" },
+    org: { pt: "BSTQB® · ISTQB®", en: "BSTQB® · ISTQB®" },
     period: { pt: "Mar. 2025", en: "Mar. 2025" },
-    highlights: [],
+    highlights: [
+      {
+        pt: "Certificação de base em teste de software reconhecida internacionalmente.",
+        en: "Internationally recognised foundation certification in software testing.",
+      },
+    ],
+    credential: "25-CTFL-13972-BR",
+    documents: [
+      { label: { pt: "Certificado (PDF)", en: "Certificate (PDF)" }, href: "/certificados/istqb-ctfl.pdf" },
+    ],
+    media: [
+      {
+        image: certCtfl,
+        alt: {
+          pt: "Certificado ISTQB Certified Tester Foundation Level (CTFL) emitido pelo BSTQB para Icaro Santos de Oliveira",
+          en: "ISTQB Certified Tester Foundation Level (CTFL) certificate issued by BSTQB to Icaro Santos de Oliveira",
+        },
+        caption: { pt: "CTFL · válido mundialmente", en: "CTFL · valid worldwide" },
+        document: true,
+      },
+    ],
   },
   {
     id: "pibic",
@@ -294,6 +354,40 @@ export const timeline: TimelineItem[] = [
       {
         pt: "Supervisão técnica de bolsista IC/PIBIC em projeto sobre qualidade de dados e de índices para sistemas RAG.",
         en: "Technical supervision of a PIBIC research fellow on data and index quality for RAG systems.",
+      },
+    ],
+  },
+  {
+    id: "c-jovem",
+    group: "extra",
+    icon: "book-open",
+    title: { pt: "Professor de Lógica de Programação", en: "Programming Logic Instructor" },
+    org: {
+      pt: "Residência em TIC 20 — Capacita Brasil / C-Jovem (UECE)",
+      en: "ICT Residency 20 — Capacita Brasil / C-Jovem (UECE)",
+    },
+    period: { pt: "Jan. — Fev. 2025", en: "Jan. — Feb. 2025" },
+    location: { pt: "Fortaleza/CE", en: "Fortaleza, Brazil" },
+    highlights: [
+      {
+        pt: "Aulas de **lógica de programação** (48 h) no programa de residência em TIC Capacita Brasil/C-Jovem, executado pela UECE e pelo Instituto Atlântico, com coordenação da Softex e apoio do MCTI.",
+        en: "Taught **programming logic** (48 h) in the Capacita Brasil/C-Jovem ICT residency programme, run by UECE and Instituto Atlântico, coordinated by Softex and supported by Brazil's Ministry of Science and Technology.",
+      },
+    ],
+    documents: [
+      {
+        label: { pt: "Certificado", en: "Certificate" },
+        href: "/certificados/capacita-brasil-c-jovem.webp",
+      },
+    ],
+    media: [
+      {
+        image: certCJovem,
+        alt: {
+          pt: "Certificado do Programa Residência em TIC 20 — Capacita Brasil/C-Jovem atestando a atuação como professor de Lógica de Programação",
+          en: "Certificate from the ICT Residency 20 — Capacita Brasil/C-Jovem programme for teaching Programming Logic",
+        },
+        caption: { pt: "Capacita Brasil / C-Jovem · 48 h", en: "Capacita Brasil / C-Jovem · 48 h" },
       },
     ],
   },

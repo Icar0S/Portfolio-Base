@@ -72,6 +72,10 @@ Trechos entre `**asteriscos duplos**` aparecem em destaque. O primeiro projeto d
   Para trocar uma captura, substitua o arquivo em `assets/` mantendo o nome e rode o script.
 - **Foto do hero:** `assets/Icaro Santos (58).jpg` → `src/assets/images/profile.webp`.
 - **Currículos:** `public/cv-icaro-santos.pdf` (PT) e `public/cv-icaro-santos-en.pdf` (EN).
+- **Certificados:** arquivos para download em `public/certificados/` (cadastrados em `documents` nos itens de
+  `src/data/experience.ts`); as miniaturas saem de `assets/cert-*.png` via `npm run images`.
+  **Nunca coloque em `public/` documentos com dados pessoais** (CPF, RG etc.): tudo ali é publicado e o
+  repositório é público. Guarde-os em `private/`, que é ignorada pelo git.
 - **Imagem de compartilhamento e ícones:** `npm run og` gera `public/og-image.png` (1200×630),
   `src/app/icon.png` e `src/app/apple-icon.png` (precisa de internet para baixar as fontes).
 

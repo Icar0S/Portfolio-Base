@@ -52,12 +52,14 @@ export function buildKnowledge(locale: Locale): KnowledgeChunk[] {
     id: "languages",
     title: isPt ? "Idiomas e certificação" : "Languages and certification",
     text: `${profile.languages.map((language) => `${language.name[locale]} (${language.level[locale]})`).join(", ")}. ${
-      isPt ? "Certificado ISTQB® CTFL (BSTQB, mar. 2025)." : "ISTQB® CTFL certified (BSTQB, Mar. 2025)."
+      isPt
+        ? "Certificações ISTQB®: CTFL — Foundation Level (mar. 2025) e CT-AI — AI Testing (out. 2026), emitidas pelo BSTQB."
+        : "ISTQB® certifications: CTFL — Foundation Level (Mar. 2025) and CT-AI — AI Testing (Oct. 2026), issued by BSTQB."
     } ${profile.location[locale]}.`,
     source: copy.about.eyebrow,
     href: section("about"),
     keywords:
-      "idiomas languages ingles english espanhol spanish istqb certificacao certification fortaleza onde where mora",
+      "idiomas languages ingles english espanhol spanish istqb ctfl ct-ai certificacoes certificados certificacao certification fortaleza onde where mora",
   });
 
   for (const category of skillCategories) {
